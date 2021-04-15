@@ -13,8 +13,8 @@ public class StatsService {
         int sum = 0;
         for (long sale : sales) {
             sum += sale;
-            averageSum = sum / 12;
         }
+        averageSum = sum / 12;
         return averageSum;
     }
 
@@ -24,7 +24,7 @@ public class StatsService {
         long currentMax = sales[0];
         for (long sale : sales) {
             month += 1;
-            if (currentMax < sale) {
+            if (currentMax <= sale) {
                 currentMax = sale;
                 maxMonth = month;
             }
@@ -49,7 +49,11 @@ public class StatsService {
     public int belowAverage(long[] sales) {
         int month = 0;
         int monthAmount = 0;
-        long average = 15;
+        long sum = 0;
+        for (long sale : sales) {
+            sum += sale;
+        }
+        long average = sum / 12;
         long  amount = sales[0];
         for (long sale : sales) {
             month += 1;
@@ -61,7 +65,11 @@ public class StatsService {
     public int overAverage(long[] sales) {
         int month = 0;
         int monthAmount = 0;
-        long average = 15;
+        long sum = 0;
+        for (long sale : sales) {
+            sum += sale;
+        }
+        long average = sum / 12;
         long  amount = sales[0];
         for (long sale : sales) {
             month += 1;
