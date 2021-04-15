@@ -54,7 +54,8 @@ public class StatsService {
         for (long sale : sales) {
             month += 1;
             if (sale < average) {
-                 monthAmount += 1;           }
+                 monthAmount += 1;
+            }
         }
         return monthAmount;
     }
@@ -66,7 +67,8 @@ public class StatsService {
         for (long sale : sales) {
             month += 1;
             if (sale > average) {
-                monthAmount += 1;           }
+                monthAmount += 1;  
+            }
         }
         return monthAmount;
     }
